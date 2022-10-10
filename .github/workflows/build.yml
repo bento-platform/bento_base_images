@@ -48,6 +48,9 @@ jobs:
         with:
           push: true
           file: ./spec/python/alpine.Dockerfile
+          build-args: |
+            BENTO_PYTHON_VERSION=${{ env.BENTO_PYTHON_VERSION }}
+            BENTO_ALPINE_VERSION=${{ env.BENTO_ALPINE_VERSION }}
           tags: ${{ steps.meta-python-alpine.outputs.tags }}
           labels: ${{ steps.meta-python-alpine.outputs.labels }}
 
@@ -67,7 +70,7 @@ jobs:
           push: true
           file: ./spec/python/debian.Dockerfile
           build-args: |
-            BENTO_PYTHON_VERSION=${{  }}
-            BENTO_DEBIAN_VERSION=${{  }}
+            BENTO_PYTHON_VERSION=${{ env.BENTO_PYTHON_VERSION }}
+            BENTO_DEBIAN_VERSION=${{ env.BENTO_DEBIAN_VERSION }}
           tags: ${{ steps.meta-python-debian.outputs.tags }}
           labels: ${{ steps.meta-python-debian.outputs.labels }}
