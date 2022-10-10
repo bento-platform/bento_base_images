@@ -38,8 +38,9 @@ jobs:
         with:
           images: |
             ghcr.io/bento-platform/bento_base_image
-          tags:
+          tags: |
             type=raw,value=python-alpine-latest
+            type=raw,value=python-alpine-{{date 'YYYY.MM.DD'}}
             type=raw,value=python-alpine-{{date 'YYYY.MM.DD.HHmm'}}
 
       - name: Build and push python-alpine image
@@ -59,8 +60,9 @@ jobs:
         with:
           images: |
             ghcr.io/bento-platform/bento_base_image
-          tags:
+          tags: |
             type=raw,value=python-debian-latest
+            type=raw,value=python-debian-{{date 'YYYY.MM.DD'}}
             type=raw,value=python-debian-{{date 'YYYY.MM.DD.HHmm'}}
 
       - name: Build and push python-debian image
