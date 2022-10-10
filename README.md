@@ -12,3 +12,9 @@ to automatically build, tag, and distribute these base images.
 
 It builds on the work done for 
 [BentoV2](https://github.com/bento-platform/bentoV2).
+
+## Configuring container build environments
+
+Container operating system and Python versions are configured using `env`
+parameters in the 
+[build.yml GitHub Actions workflow](.github/workflows/build.yml).
