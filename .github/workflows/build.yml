@@ -53,6 +53,7 @@ jobs:
             BENTO_ALPINE_VERSION=${{ env.BENTO_ALPINE_VERSION }}
           tags: ${{ steps.meta-python-alpine.outputs.tags }}
           labels: ${{ steps.meta-python-alpine.outputs.labels }}
+          platform: linux/amd64,linux/arm64
 
       - name: Set up image metadata for python-debian
         id: meta-python-debian
@@ -75,3 +76,4 @@ jobs:
             BENTO_DEBIAN_VERSION=${{ env.BENTO_DEBIAN_VERSION }}
           tags: ${{ steps.meta-python-debian.outputs.tags }}
           labels: ${{ steps.meta-python-debian.outputs.labels }}
+          platform: linux/amd64,linux/arm64
