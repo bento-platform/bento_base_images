@@ -7,7 +7,10 @@ LABEL Maintainer="Bento Project"
 
 RUN apt-get update -y; \
     apt-get upgrade -y; \
-    apt-get install -y build-essential git
+    apt-get install -y \
+            build-essential \
+            git \
+            libpq-dev
 
 RUN python -m pip install --upgrade pip
 RUN python -m pip install gunicorn
