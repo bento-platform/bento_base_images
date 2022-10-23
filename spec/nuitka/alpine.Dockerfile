@@ -11,4 +11,4 @@ RUN apk update && \
 RUN apk add patchelf 
 
 # install single-python-executable-build dependencies
-RUN pip install Nuitka==1.1.2 waitress==2.1.2
+RUN pip install Nuitka==1.1.2 waitress==2.1.2 orderedset==2.0.3
