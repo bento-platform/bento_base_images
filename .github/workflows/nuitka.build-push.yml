@@ -1,7 +1,10 @@
 name: Build and push Bento Nuitka base image
 on:
-  workflow_dispatch:
-
+  # TEMP
+  # workflow_dispatch:
+  push:
+    branches:
+      - "features/nuitka-base-image"
 env:
   BENTO_PYTHON_ALPINE_BASE_VERSION: "3.8-alpine"
 
