@@ -5,6 +5,7 @@ FROM python:${BENTO_PYTHON_VERSION}-${BENTO_ALPINE_VERSION}
 
 LABEL Maintainer="Bento Project"
 
+# Install base packages for later use when installing Python packages
 RUN apk update; \
 	apk upgrade; \
 	apk add --no-cache --virtual \
