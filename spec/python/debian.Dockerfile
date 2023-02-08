@@ -26,3 +26,6 @@ RUN apt-get update -y; \
 
 RUN python -m pip install --upgrade pip
 RUN python -m pip install gunicorn
+
+WORKDIR /
+COPY ./resources/set_gitconfig.bash .
