@@ -10,7 +10,7 @@ if [[ -n "${BENTO_GIT_NAME}" || -n "${BENTO_GIT_EMAIL}" ]]; then
   printf "\temail = %s\n" "${BENTO_GIT_EMAIL}" >> ~/.gitconfig
 fi
 
-if [[ -n "${BENTO_GIT_REPOSITORY}" ]]; then
+if [[ -n "${BENTO_GIT_REPOSITORY_DIR}" ]]; then
   echo "[safe]" >> ~/.gitconfig
-  printf "\tdirectory = %s\n" "${BENTO_GIT_REPOSITORY}" >> ~/.gitconfig
+  printf "\tdirectory = %s\n" "${BENTO_GIT_REPOSITORY_DIR}" >> ~/.gitconfig
 fi
