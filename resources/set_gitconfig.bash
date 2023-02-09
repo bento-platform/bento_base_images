@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Ensure gitconfig file exists before trying to write to it
+# Ensure gitconfig file exists and is blank before trying to write to it
+rm -f ~/.gitconfig
 touch ~/.gitconfig
 
 if [[ -n "${BENTO_GIT_NAME}" || -n "${BENTO_GIT_EMAIL}" ]]; then
