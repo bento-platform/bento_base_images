@@ -25,7 +25,7 @@ RUN apt-get update -y; \
             procps
 
 RUN python -m pip install --upgrade pip
-RUN python -m pip install gunicorn
+RUN python -m pip install gunicorn  # TODO: don't always include this or bundle in uvicorn & poetry too
 
 WORKDIR /
 COPY ./resources/set_gitconfig.bash .
