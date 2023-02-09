@@ -1,0 +1,9 @@
+ARG BENTO_NODE_VERSION
+ARG BENTO_DEBIAN_VERSION
+
+FROM node:${BENTO_NODE_VERSION}-${BENTO_DEBIAN_VERSION}
+
+LABEL Maintainer="Bento Project"
+
+WORKDIR /
+COPY ./resources/set_gitconfig.bash .
