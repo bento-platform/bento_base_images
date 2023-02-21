@@ -14,6 +14,7 @@ RUN apt-get update -y; \
 
 WORKDIR /
 COPY ./resources/set_gitconfig.bash .
+COPY ./resources/create_service_user.bash .
 COPY ./resources/gosu_entrypoint.bash .
 RUN chmod +x ./gosu_entrypoint.bash
 

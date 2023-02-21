@@ -32,6 +32,7 @@ RUN python -m pip install gunicorn  # TODO: don't always include this or bundle 
 
 WORKDIR /
 COPY ./resources/set_gitconfig.bash .
+COPY ./resources/create_service_user.bash .
 COPY ./resources/gosu_entrypoint.bash .
 RUN chmod +x ./gosu_entrypoint.bash
 
