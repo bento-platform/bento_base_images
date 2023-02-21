@@ -11,6 +11,7 @@ LABEL Maintainer="Bento Project"
 # bash allows for better entrypoint scripting for some projects
 # git is used to get tag/commit information, especially in development environments
 # curl is used for talking to/waiting for other services & for diagnosing issues
+# gosu is for switching into a non-root UID/GID cleanly in the base image entrypoint
 # procps is installed to provide ps, which can monitor active processes & get PIDs for debugging
 # TODO: Find reasoning / use for each of these packages
 RUN apt-get update -y; \
@@ -20,12 +21,18 @@ RUN apt-get update -y; \
             build-essential \
             curl \
             git \
+            gosu \
             libpq-dev \
             perl \
-            procps
+            procps; \
+    rm -rf /var/lib/apt/lists/*
 
 RUN python -m pip install --upgrade pip
 RUN python -m pip install gunicorn  # TODO: don't always include this or bundle in uvicorn & poetry too
 
 WORKDIR /
 COPY ./resources/set_gitconfig.bash .
+COPY ./resources/gosu_entrypoint.bash .
+RUN chmod +x ./gosu_entrypoint.bash
+
+ENTRYPOINT ["/gosu_entrypoint.bash"]
