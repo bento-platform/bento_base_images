@@ -194,6 +194,6 @@ jobs:
           file: ./spec/plain/debian.Dockerfile
           build-args: |
             BENTO_PLAIN_DEBIAN_VERSION=${{ env.BENTO_PLAIN_DEBIAN_VERSION }}
-          tags: ${{ steps.meta-node-debian.outputs.tags }}
-          labels: ${{ steps.meta-node-debian.outputs.labels }}
+          tags: ${{ steps.meta-plain-debian.outputs.tags }}
+          labels: ${{ steps.meta-plain-debian.outputs.labels }}
           platforms: linux/amd64,linux/arm64
