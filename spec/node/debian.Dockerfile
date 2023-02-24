@@ -7,9 +7,10 @@ LABEL Maintainer="Bento Project"
 
 # Install Bash for nicer entrypoints + utility scripts
 # gosu is for switching into a non-root UID/GID cleanly in the base image entrypoint
+# procps is installed to provide ps, which can monitor active processes & get PIDs for debugging
 RUN apt-get update -y; \
     apt-get upgrade -y; \
-    apt-get install -y bash gosu; \
+    apt-get install -y bash gosu procps; \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /
