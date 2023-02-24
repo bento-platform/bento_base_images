@@ -10,7 +10,7 @@ LABEL Maintainer="Bento Project"
 #  - dpkg-dev/g++/gcc/libc6-dev/make
 # bash allows for better entrypoint scripting for some projects
 # git is used to get tag/commit information, especially in development environments
-# curl is used for talking to/waiting for other services & for diagnosing issues
+# curl is used for talking to/waiting for other services, healthchecks, & for diagnosing issues
 # gosu is for switching into a non-root UID/GID cleanly in the base image entrypoint
 # procps is installed to provide ps, which can monitor active processes & get PIDs for debugging
 # TODO: Find reasoning / use for each of these packages
