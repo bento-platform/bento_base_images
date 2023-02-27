@@ -5,6 +5,8 @@ FROM python:${BENTO_PYTHON_VERSION}-${BENTO_PYTHON_DEBIAN_VERSION}
 
 LABEL Maintainer="Bento Project"
 
+SHELL ["/bin/bash", "-c"]
+
 # Install base packages for later use when installing Python packages
 # build-essential contains:
 #  - dpkg-dev/g++/gcc/libc6-dev/make
@@ -25,10 +27,11 @@ RUN apt-get update -y; \
             libpq-dev \
             perl \
             procps; \
-    rm -rf /var/lib/apt/lists/*
-
-RUN python -m pip install --upgrade pip
-RUN python -m pip install gunicorn  # TODO: don't always include this or bundle in uvicorn & poetry too
+    rm -rf /var/lib/apt/lists/*; \
+    python -m venv /env; \
+    source /env/bin/activate; \
+    pip install --no-cache-dir -U pip; \
+    pip install --no-cache-dir poetry==1.3.2
 
 WORKDIR /
 COPY ./resources/set_gitconfig.bash .
