@@ -31,8 +31,7 @@ RUN apt-get update -y; \
             procps; \
     rm -rf /var/lib/apt/lists/*; \
     pip install --no-cache-dir -U pip; \
-    pip install --no-cache-dir poetry==1.3.2; \
-    python -m venv /env
+    pip install --no-cache-dir poetry==1.4.1
 
 WORKDIR /
 COPY ./resources/set_gitconfig.bash .
