@@ -38,6 +38,7 @@ WORKDIR /
 COPY ./resources/set_gitconfig.bash .
 COPY ./resources/create_service_user.bash .
 COPY ./resources/gosu_entrypoint.bash .
-RUN chmod +x ./gosu_entrypoint.bash
+COPY ./resources/poetry_user_install.bash .
+RUN chmod +x ./*.bash
 
 ENTRYPOINT ["/gosu_entrypoint.bash"]
