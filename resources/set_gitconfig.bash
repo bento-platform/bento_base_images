@@ -5,12 +5,18 @@ rm -f ~/.gitconfig
 touch ~/.gitconfig
 
 if [[ -n "${BENTO_GIT_NAME}" || -n "${BENTO_GIT_EMAIL}" ]]; then
-  echo "[user]" >> ~/.gitignore
-  printf "\tname = %s\n" "${BENTO_GIT_NAME}" >> ~/.gitconfig
-  printf "\temail = %s\n" "${BENTO_GIT_EMAIL}" >> ~/.gitconfig
+  echo "Setting git user information: name=${BENTO_GIT_NAME}; email=${BENTO_GIT_EMAIL}"
+  {
+    echo "[user]";
+    printf "\tname = %s\n" "${BENTO_GIT_NAME}";
+    printf "\temail = %s\n" "${BENTO_GIT_EMAIL}";
+  } >> ~/.gitconfig
 fi
 
 if [[ -n "${BENTO_GIT_REPOSITORY_DIR}" ]]; then
-  echo "[safe]" >> ~/.gitconfig
-  printf "\tdirectory = %s\n" "${BENTO_GIT_REPOSITORY_DIR}" >> ~/.gitconfig
+  echo "Setting git safe directory = ${BENTO_GIT_REPOSITORY_DIR}"
+  {
+    echo "[safe]";
+    printf "\tdirectory = %s\n" "${BENTO_GIT_REPOSITORY_DIR}";
+  } >> ~/.gitconfig
 fi
