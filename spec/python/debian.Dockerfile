@@ -16,7 +16,6 @@ SHELL ["/bin/bash", "-c"]
 # gosu is for switching into a non-root UID/GID cleanly in the base image entrypoint
 # procps is installed to provide ps, which can monitor active processes & get PIDs for debugging
 # TODO: Find reasoning / use for each of these packages
-# Set up a virtual environment for development images
 
 RUN apt-get update -y; \
     apt-get upgrade -y; \
