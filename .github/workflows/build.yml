@@ -4,10 +4,10 @@ on:
 
 env:
   BENTO_PYTHON_VERSION: "3.11"
-  BENTO_PYTHON_DEBIAN_VERSION: "slim-bullseye"
+  BENTO_PYTHON_DEBIAN_VERSION: "slim-bookworm"
   BENTO_NODE_VERSION: "18"
-  BENTO_NODE_DEBIAN_VERSION: "bullseye-slim"
-  BENTO_PLAIN_DEBIAN_VERSION: "bullseye-slim"
+  BENTO_NODE_DEBIAN_VERSION: "bookworm-slim"
+  BENTO_PLAIN_DEBIAN_VERSION: "bookworm-slim"
 
 jobs:
   build-push-python-debian:
