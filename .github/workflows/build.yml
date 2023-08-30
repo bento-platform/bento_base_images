@@ -193,6 +193,7 @@ jobs:
           push: true
           file: ./spec/golang/debian.Dockerfile
           build-args: |
+            BENTO_GOLANG_VERSION=${{ env.BENTO_GOLANG_VERSION }}
             BENTO_GOLANG_DEBIAN_VERSION=${{ env.BENTO_GOLANG_DEBIAN_VERSION }}
           tags: ${{ steps.meta-golang-debian.outputs.tags }}
           labels: ${{ steps.meta-golang-debian.outputs.labels }}
