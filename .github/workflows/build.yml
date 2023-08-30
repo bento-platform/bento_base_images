@@ -8,8 +8,8 @@ env:
   BENTO_NODE_VERSION: "18"
   BENTO_NODE_DEBIAN_VERSION: "bookworm-slim"
   BENTO_PLAIN_DEBIAN_VERSION: "bookworm-slim"
-  BENTO_GOLANG_VERSION: "1.20"
-  BENTO_GOLANG_DEBIAN_VERSION: "bullseye"
+  BENTO_GOLANG_VERSION: "1.21"
+  BENTO_GOLANG_DEBIAN_VERSION: "bookworm"
 
 jobs:
   build-push-python-debian:
