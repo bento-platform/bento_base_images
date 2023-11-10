@@ -1,6 +1,9 @@
 name: Build and push Bento base images
 on:
   workflow_dispatch:
+  schedule:
+    # no matter what, build new base images on the first of every month at 5:30 AM
+    - cron: '30 5 1 * *'
 
 env:
   BENTO_PYTHON_VERSION: "3.11"
