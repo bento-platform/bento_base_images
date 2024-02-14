@@ -14,7 +14,9 @@ SHELL ["/bin/bash", "-c"]
 # git is used to get tag/commit information, especially in development environments
 # curl is used for talking to/waiting for other services, healthchecks, & for diagnosing issues
 # gosu is for switching into a non-root UID/GID cleanly in the base image entrypoint
+# jq is for debugging
 # procps is installed to provide ps, which can monitor active processes & get PIDs for debugging
+# vim is for debugging
 # TODO: Find reasoning / use for each of these packages
 
 RUN apt-get update -y; \
@@ -25,9 +27,11 @@ RUN apt-get update -y; \
             curl \
             git \
             gosu \
+            jq \
             libpq-dev \
             perl \
-            procps; \
+            procps \
+            vim; \
     rm -rf /var/lib/apt/lists/*; \
     pip install --no-cache-dir -U pip; \
     pip install --no-cache-dir poetry==1.7.1
