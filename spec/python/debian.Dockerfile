@@ -34,7 +34,7 @@ RUN apt-get update -y; \
             vim; \
     rm -rf /var/lib/apt/lists/*; \
     pip install --no-cache-dir -U pip; \
-    pip install --no-cache-dir poetry==1.8.1
+    pip install --no-cache-dir poetry==1.8.2
 
 WORKDIR /
 COPY ./resources/set_gitconfig.bash .
