@@ -145,7 +145,7 @@ jobs:
             type=raw,value=plain-debian-{{date 'YYYY.MM.DD.HHmm'}}
 
       - name: Build and push plain-debian image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v6
         with:
           push: true
           file: ./spec/plain/debian.Dockerfile
