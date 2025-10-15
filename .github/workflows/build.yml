@@ -6,7 +6,7 @@ on:
     - cron: '30 5 1 * *'
 
 env:
-  BENTO_PYTHON_VERSION: "3.11"
+  BENTO_PYTHON_VERSION: "3.12"
   BENTO_PYTHON_DEBIAN_VERSION: "slim-bookworm"
   BENTO_NODE_VERSION: "24"
   BENTO_NODE_DEBIAN_VERSION: "bookworm-slim"
