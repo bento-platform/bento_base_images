@@ -35,7 +35,7 @@ RUN apt-get update -y; \
     rm -rf /var/lib/apt/lists/*; \
     pip install --no-cache-dir -U pip; \
     pip install --no-cache-dir 'poetry>=2.2.1,<3'; \
-    pip install --no-cache-dir 'uvicorn[standard]>=0.37.0,<0.38'
+    pip install --no-cache-dir 'uvicorn[standard]>=0.40.0,<0.41'
 
 WORKDIR /
 COPY ./resources/set_gitconfig.bash .
