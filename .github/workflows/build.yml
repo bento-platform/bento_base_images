@@ -7,12 +7,12 @@ on:
 
 env:
   BENTO_PYTHON_VERSION: "3.12"
-  BENTO_PYTHON_DEBIAN_VERSION: "slim-bookworm"
+  BENTO_PYTHON_DEBIAN_VERSION: "slim-trixie"
   BENTO_NODE_VERSION: "24"
-  BENTO_NODE_DEBIAN_VERSION: "bookworm-slim"
-  BENTO_PLAIN_DEBIAN_VERSION: "bookworm-slim"
-  BENTO_GOLANG_VERSION: "1.21"
-  BENTO_GOLANG_DEBIAN_VERSION: "bookworm"
+  BENTO_NODE_DEBIAN_VERSION: "trixie-slim"
+  BENTO_PLAIN_DEBIAN_VERSION: "trixie-slim"
+  BENTO_GOLANG_VERSION: "1.26"
+  BENTO_GOLANG_DEBIAN_VERSION: "trixie"
 
 jobs:
   build-push-python-debian:
